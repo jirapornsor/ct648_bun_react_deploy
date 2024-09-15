@@ -1,0 +1,63 @@
+/* DataDisplay.css */
+.joke-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    to bottom right,
+    #ffeb3b,
+    #f44336
+  ); /* Gradient background */
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.loading {
+  font-size: 18px;
+  color: #fff;
+}
+
+.joke-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.joke-type {
+  color: #ff5722;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.setup,
+.punchline {
+  font-size: 18px;
+  color: #333;
+  margin-top: 15px;
+}
+
+.error-message {
+  font-size: 18px;
+  color: #d9534f;
+}
+
+.pokemon-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+}
