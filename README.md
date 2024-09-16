@@ -1,5 +1,6 @@
 # React + TypeScript + Vite
-### สร้าง web app ด้วย Docker แล้ว deploy ขึ้น AWS
+## สร้าง web app ด้วย Docker แล้ว deploy ขึ้น AWS
+### IP เครื่อง  18.139.111.82:8119
 #### ขั้นตอนการดำเนินการ
 1. สร้าง Dockerfile ไว้ในโปรเจกต์ เพื่อตั้งค่าโปรเจกต์ Bun ที่ทำงานร่วมกับ Nginx โดยมีการทำงานแบบสองขั้นตอน (multi-stage build) ซึ่งช่วยให้ขนาดของ image ที่ได้มีขนาดเล็กลง และทำงานได้อย่างมีประสิทธิภาพมากขึ้น
    - การสร้างแอปด้วย Bun เป็นการเตรียมและสร้างแอปพลิเคชัน Bun ก่อนนำไปใช้งานกับ Nginx ในขั้นต่อไป
@@ -19,10 +20,9 @@
      ```
 2. ไปสร้าง repository ชื่อ jirapornsor/ct648_bun_react_docker ไว้ที่ Docker Hub https://hub.docker.com/ 
 3. กลับมาที่โปรแกรม VSCODE สร้าง Docker image ชื่อ jirapornsor/ct648_bun_react_docker:0.2 จาก Dockerfile ในไดเรกทอรีปัจจุบัน และ push image ขึ้นไปยัง Docker Hub ด้วยคำสั่ง
-   - login Docker hub
-     ```bash
-     docker build -t jirapornsor/ct648_bun_react_docker:0.2 .
-     ```
+   ```bash
+   docker build -t jirapornsor/ct648_bun_react_docker:0.2 . --push 
+   ```
 4. ทอสอบ run ด้วยคำสั่ง
    ```bash
    docker run -d -p 8119:80 jirapornsor/ct648_bun_react_docker:0.2
@@ -42,3 +42,8 @@
    ```bash
    sudo docker pull jirapornsor/ct648_bun_react_docker:0.2
    ```
+4. ทอสอบ run ด้วยคำสั่ง
+   ```bash
+   docker run -d -p 8119:80 jirapornsor/ct648_bun_react_docker:0.2
+   ```
+5. เมื่อ run ผ่านและไม่มี error ก็เข้าไปดูหน้า web ด้วย Public IP ของเครื่อง instance EC2
