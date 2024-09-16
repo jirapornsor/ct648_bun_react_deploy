@@ -23,7 +23,7 @@
    ```bash
    docker build -t jirapornsor/ct648_bun_react_docker:0.2 . --push 
    ```
-4. ทอสอบ run ด้วยคำสั่ง
+4. ทดสอบ run ด้วยคำสั่ง
    ```bash
    docker run -d -p 8119:80 jirapornsor/ct648_bun_react_docker:0.2
    ```
@@ -42,7 +42,7 @@
    ```bash
    sudo docker pull jirapornsor/ct648_bun_react_docker:0.2
    ```
-4. ทอสอบ run ด้วยคำสั่ง
+4. ทดสอบ run ด้วยคำสั่ง
    ```bash
    docker run -d -p 8119:80 jirapornsor/ct648_bun_react_docker:0.2
    ```
