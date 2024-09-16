@@ -21,5 +21,24 @@
 3. กลับมาที่โปรแกรม VSCODE สร้าง Docker image ชื่อ jirapornsor/ct648_bun_react_docker:0.2 จาก Dockerfile ในไดเรกทอรีปัจจุบัน และ push image ขึ้นไปยัง Docker Hub ด้วยคำสั่ง
    - login Docker hub
      ```bash
-     docker build -t jirapornsor/ct648_bun_react_docker:tagname .
-     ``` 
+     docker build -t jirapornsor/ct648_bun_react_docker:0.2 .
+     ```
+4. ทอสอบ run ด้วยคำสั่ง
+   ```bash
+   docker run -d -p 8119:80 jirapornsor/ct648_bun_react_docker:0.2
+   ```
+#### ขั้นตอนการดำเนิน Deploy
+1. SSH เข้าไปที่ instance EC2 ที่สร้างไว้ใน aws ในที่นี้ใช้ Ubuntu 
+2. install docker โดยคำสั่ง
+   - Update 
+     ```bash
+     sudo apt update
+     ```
+   - install docker
+     ```bash
+     sudo apt install docker.io
+     ```
+3. ดึง Docker image ที่ชื่อ jirapornsor/ct648_bun_react_docker และมีแท็กเป็น 0.2 จาก Docker Hub ที่สร้างและ push ขึ้นไปไว้ก่อนห้านี้มายังเครื่อง instance EC2 ของเรา ด้วยคำสั่งนี้
+   ```bash
+   sudo docker pull jirapornsor/ct648_bun_react_docker:0.2
+   ```
